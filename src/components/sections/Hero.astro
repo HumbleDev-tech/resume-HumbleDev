@@ -1,12 +1,20 @@
 ---
 import {basics} from '@cv'
 import Section from '@/components/Section.astro';
-import Mail from '@/icons/Mail.astro';
+import Mail from '@/icons/mail.astro';
+import X from '@/icons/X.astro';
+import Github from '@/icons/Github.astro';
+import Linkedin from '@/icons/Linkedin.astro';
 import Phone from '@/icons/Phone.astro';
 
-const {name, label, image, location, profiles, phone, email} = basics;
-const {address, city, region, postalCode} = location;
-const {} = profiles;
+const {name, label, image, location, profiles, phone, email} = basics
+const {address, city, region, postalCode} = location
+
+const SOCIALS_ICONS: Record<string, any> = {
+    X,
+    Github,
+    Linkedin,
+}
 ---
 
 <Section>
