@@ -2,17 +2,17 @@
   "basics": {
     "name": "Diego Valenzuela",
     "label": "Ingeniero en informatica y Desarrollador Fullstack",
-    "image": "/me.webp",
-    "email": "miduga@gmail.com",
+    "image": "/fat-orange-cat.webp",
+    "email": "diegovalenzuela985@proton.me",
     "phone": "+34 688888888",
     "url": "https://midu.dev",
     "summary": "+15 años de experiencia como Desarrollador Web. Actualmente soy Creador de Contenido y Divulgador sobre Programación. Vivo en Barcelona, España. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos de empresas multinacionales.",
     "location": {
       "address": "",
-      "postalCode": "08820",
-      "city": "el Prat de Llobregat",
-      "countryCode": "ES",
-      "region": "España"
+      "postalCode": "5750000",
+      "city": "Achao",
+      "countryCode": "CL",
+      "region": "Los Lagos"
     },
     "profiles": [
       {
