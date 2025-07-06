@@ -32,9 +32,9 @@
       "name": "Cuerpo de Bomberos de Osorno",
       "position": "Desarrollador Fullstack y web",
       "url": "https://twitch.tv/midudev",
-      "startDate": "2021-01-01",
-      "endDate": null,
-      "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
+      "startDate": "2026",
+      "endDate": "2026",
+      "summary": "Desarrollo de una aplicación móvil y web en React Native y Next.js para la gestión interna de material mayor del Cuerpo de Bomberos de Osorno, utilizada por sus 8 compañías. Integración con AWS Amplify (autenticación, APIs y almacenamiento), despliegue en Vercel y participación activa en pruebas, documentación y soporte. El sistema optimiza procesos operativos clave de la institución.",
       "highlights": [
         "Started the company"
       ]
