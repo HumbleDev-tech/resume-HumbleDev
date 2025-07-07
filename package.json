@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.11.0",
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "ninja-keys": "^1.2.2"
   }
 }
