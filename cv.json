@@ -31,7 +31,7 @@
     {
       "name": "Cuerpo de Bomberos de Osorno",
       "position": "Desarrollador Fullstack y web",
-      "url": "https://twitch.tv/midudev",
+      "url": "https://www.bomberos.cl/cuerpo-de-bomberos-de-osorno",
       "startDate": "2026",
       "endDate": "2026",
       "summary": "Desarrollo de una aplicación móvil y web en React Native y Next.js para la gestión interna de material mayor del Cuerpo de Bomberos de Osorno, utilizada por sus 8 compañías. Integración con AWS Amplify (autenticación, APIs y almacenamiento), despliegue en Vercel y participación activa en pruebas, documentación y soporte. El sistema optimiza procesos operativos clave de la institución.",
@@ -52,12 +52,12 @@
     ]
   }],
   "education": [{
-    "institution": "Universitat Oberta de Catalunya",
-    "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
+    "institution": "Inacap",
+    "url": "https://portal.inacap.cl/",
+    "area": "Ingeniero en Informática",
     "studyType": "Bachelor",
-    "startDate": "2003-01-01",
-    "endDate": "2009-01-01",
+    "startDate": "2022-01-01",
+    "endDate": "2025-01-01",
     "score": "4.0",
     "courses": [
       "DB1101 - Basic SQL"
