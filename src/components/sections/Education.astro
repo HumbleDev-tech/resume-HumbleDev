@@ -7,7 +7,7 @@ import { education } from "@cv"
 <Section title="Educación">
   <ul>
     {
-      education.map(({ institution, startDate, endDate, area }) => {
+      education.map(({ institution, startDate, endDate, area, url }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear =
           endDate != null ? new Date(endDate).getFullYear() : "Actual"
@@ -18,7 +18,9 @@ import { education } from "@cv"
             <article>
               <header>
                 <div>
-                  <h3>{institution}</h3>
+                  <a href={url} title={`Ver ${institution}`} target="_blank" rel="noopener noreferrer">
+                    <h3>{institution}</h3>
+                  </a>
                 </div>
 
                 <time>{years}</time>
@@ -45,6 +47,12 @@ import { education } from "@cv"
   article h3 {
     font-weight: 500;
     color: #111;
+  }
+  article a {
+    color: #111;;
+  }
+  article a:hover {
+    text-decoration: underline;
   }
 
   header {

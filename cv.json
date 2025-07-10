@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Diego Valenzuela",
-    "label": "Ingeniero en informatica y Desarrollador Fullstack Web",
+    "label": "Ingeniero en informatica",
     "image": "/fat-orange-cat.webp",
     "email": "diegovalenzuela985@proton.me",
     "phone": "+34 688888888",
@@ -91,83 +91,16 @@
     "summary": "Description…"
   }],
   "skills": [
-    {
-      "name": "HTML",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend"
-      ]
-    },
-    {
-      "name": "CSS",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
-      ]
-    },
-    {
-      "name": "Tailwind",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
-      ]
-    },
-    {
-      "name": "Node",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "JavaScript", "Servidor"
-      ]
-    },
-    {
-      "name": "MySQL",
-      "level": "Avanzado",
-      "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
-      ]
-    },
-    {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
-      ]
-    },
-    {
-      "name": "GitHub",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
-      ]
-    },
-    {
-      "name": "Next.js",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
-      ]
-    },
-    {
-      "name": "React",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
-      ]
-    }
+    { "name": "HTML" },
+    { "name": "CSS" },
+    { "name": "JavaScript" },
+    { "name": "TypeScript" },
+    { "name": "Node" },
+    { "name": "MySQL" },
+    { "name": "Git" },
+    { "name": "GitHub" },
+    { "name": "Next.js" },
+    { "name": "React" }
   ],
   "languages": [
     {
@@ -192,14 +125,13 @@
   }],
   "projects": [
     {
-      "name": "mars.codes",
+      "name": "CV",
       "isActive": true,
-      "description": "Historia interactiva con retos de programación para viajar a Marte",
+      "description": "A minimalist portfolio configurable via one JSON",
       "highlights": [
-        "Elige tu propia aventura",
-        "En desarrollo"
+        "In progress"
       ],
-      "url": "https://mars.codes"
+      "url": "https://github.com/HumbleDev-tech/resume-HumbleDev#"
     }
   ]
 }
