@@ -1,6 +1,8 @@
-# Portafolio y CV - Diego Valenzuela
+# Portafolio y CV - Plantilla Astro
 
-Este proyecto es mi portafolio y currículum vitae digital, desarrollado con **Astro** para asegurar un rendimiento óptimo, accesibilidad y una excelente experiencia de usuario.
+Esta es una plantilla minimalista y configurable para crear un **Portafolio y Currículum Vitae** digital. Está desarrollada con **Astro** para asegurar un rendimiento óptimo, accesibilidad y una excelente experiencia de usuario.
+
+El proyecto está diseñado para que puedas personalizarlo fácilmente con tus propios datos utilizando un archivo JSON, sin necesidad de tocar el código fuente principal.
 
 ## 🚀 Tecnologías
 
@@ -10,13 +12,13 @@ Este proyecto es mi portafolio y currículum vitae digital, desarrollado con **A
 -   **Diseño Responsivo**: Adaptado a móviles, tablets y escritorio.
 -   **Optimización para Impresión**: Estilos específicos (`@media print`) para generar un PDF limpio y profesional directamente desde el navegador.
 
-## 🛠️ Instalación y Uso
+## 🛠️ Instalación y Configuración
 
 1.  **Clonar el repositorio:**
 
     ```bash
-    git clone https://github.com/usuario/nombre-repo.git
-    cd nombre-repo
+    git clone https://github.com/tu-usuario/tu-repo.git
+    cd tu-repo
     ```
 
 2.  **Instalar dependencias:**
@@ -25,7 +27,18 @@ Este proyecto es mi portafolio y currículum vitae digital, desarrollado con **A
     npm install
     ```
 
-3.  **Iniciar el servidor de desarrollo:**
+3.  **Configurar tus datos:**
+
+    El proyecto utiliza un archivo `cv.json` para cargar toda la información. Por seguridad, este archivo está ignorado por Git para proteger tus datos personales.
+
+    -   Renombra el archivo `cv.template.json` a `cv.json`.
+    -   Abre `cv.json` y rellena los campos con tu información real (Experiencia, Educación, Proyectos, etc.).
+
+    ```bash
+    cp cv.template.json cv.json
+    ```
+
+4.  **Iniciar el servidor de desarrollo:**
 
     ```bash
     npm run dev
@@ -39,7 +52,7 @@ Para obtener la versión en PDF del currículum:
 1.  Abre el sitio en tu navegador.
 2.  Presiona `Ctrl + P` (o `Cmd + P` en Mac).
 3.  Selecciona "Guardar como PDF".
-4.  Asegúrate de que la opción "Gráficos de fondo" esté activada si deseas conservar los estilos visuales completos.
+4.  Asegúrate de que la opción "Gráficos de fondo" esté activada para conservar los estilos visuales.
 
 ## 🚢 Despliegue
 
@@ -47,4 +60,4 @@ Este proyecto está configurado para desplegarse fácilmente en plataformas como
 
 ---
 
-Desarrollado con ❤️ por **Humble.dev**.
+Desarrollado con ❤️ por la comunidad open source.

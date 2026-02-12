@@ -1,0 +1,104 @@
+{
+    "basics": {
+        "name": "John Doe",
+        "label": "Software Engineer",
+        "image": "/me.webp",
+        "email": "john.doe@example.com",
+        "phone": "+1 234 567 890",
+        "url": "https://johndoe.com",
+        "summary": "A summary of John Doe...",
+        "location": {
+            "address": "123 Main St",
+            "postalCode": "12345",
+            "city": "City",
+            "countryCode": "US",
+            "region": "Region"
+        },
+        "profiles": [
+            {
+                "network": "LinkedIn",
+                "username": "johndoe",
+                "url": "https://linkedin.com/in/johndoe"
+            },
+            {
+                "network": "GitHub",
+                "username": "johndoe",
+                "url": "https://github.com/johndoe"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Company Name",
+            "position": "Position",
+            "url": "https://company.com",
+            "startDate": "2020-01-01",
+            "endDate": null,
+            "summary": "Description of the job...",
+            "highlights": [
+                "Achievement 1",
+                "Achievement 2"
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "University Name",
+            "url": "https://university.edu",
+            "area": "Computer Science",
+            "studyType": "Bachelor",
+            "startDate": "2016-01-01",
+            "endDate": "2020-01-01",
+            "score": "4.0",
+            "duration": "8 Semesters",
+            "courses": [
+                "Course 1",
+                "Course 2"
+            ]
+        }
+    ],
+    "awards": [],
+    "certificates": [
+        {
+            "name": "Certificate Name",
+            "date": "2021-01-01",
+            "issuer": "Issuer Name",
+            "url": "https://certificate.com",
+            "summary": "Certificate description...",
+            "hours": "40 hours"
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "JavaScript",
+            "level": "Master",
+            "keywords": [
+                "Web Development",
+                "Frontend"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native"
+        }
+    ],
+    "interests": [],
+    "references": [],
+    "projects": [
+        {
+            "name": "Project Name",
+            "isActive": true,
+            "description": "Project description...",
+            "highlights": [
+                "Highlight 1",
+                "Highlight 2"
+            ],
+            "url": "https://project.com",
+            "github": "https://github.com/johndoe/project"
+        }
+    ]
+}
