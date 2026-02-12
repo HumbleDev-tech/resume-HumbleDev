@@ -1,7 +1,50 @@
 ---
 import Section from '@/components/Section.astro';
+import HTML from "@/icons/html.astro"
+import CSS from "@/icons/css.astro"
+import JavaScript from "@/icons/JavaScript.astro"
+import TypeScript from "@/icons/TypeScript.astro"
+import React from "@/icons/React.astro"
+import Node from "@/icons/node.astro"
+import MySQL from "@/icons/mysql.astro"
+import Git from "@/icons/Git.astro"
+import GitHub from "@/icons/GitHub.astro"
+import Tailwind from "@/icons/tailwind.astro"
+import Next from "@/icons/Next.astro"
+import Python from "@/icons/Python.astro"
+import AstroIcon from "@/icons/AstroIcon.astro"
+import Vite from "@/icons/Vite.astro"
+import AWS from "@/icons/AWS.astro"
+import Firebase from "@/icons/Firebase.astro"
+import AI from "@/icons/AI.astro"
+import Hardware from "@/icons/Hardware.astro"
+import Support from "@/icons/Support.astro"
 
 import { skills } from "@cv"
+
+const SKILLS_ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwind,
+  Python,
+  Astro: AstroIcon,
+  Vite,
+  AWS,
+  Firebase,
+  "OpenAI API": AI,
+  "Anthropic API": AI,
+  "Gemini API": AI,
+  "Soporte TI": Support,
+  "Hardware Maintenance": Hardware,
+}
 ---
 
 
@@ -12,11 +55,15 @@ import { skills } from "@cv"
    <ul>
         {
             skills.map(
-                ({ name }) => (
+                ({ name }) => {
+                    const iconName = name === "Next.js" ? "Next" : name
+                    const Icon = SKILLS_ICONS[iconName]
+
+                    return (
                     <li>
-                        <span>{name}</span>
+                        {Icon && <Icon />} <span>{name}</span>
                     </li>
-                )
+                )}
             )
         }
    </ul>
@@ -33,12 +80,15 @@ import { skills } from "@cv"
     }
 
     li {
-        background-color: var(--color-accent);
-        padding: 0.2rem 0.6rem;
-        color: var(--color-primary);
+        align-items: center;
+        background: #eee;
         border-radius: 6px;
+        color: black;
+        display: flex;
         font-size: 0.8rem;
         font-weight: 500;
+        gap: 6px;
+        padding: 0.2rem 0.6rem;
     }
 
     @media print {
@@ -64,6 +114,11 @@ import { skills } from "@cv"
 
         li:last-child::after {
             content: ".";
+        }
+        
+        /* Ocultar iconos en impresión si se desea, o ajustarlos */
+        li :global(svg) {
+            display: none; 
         }
     }
 </style>
