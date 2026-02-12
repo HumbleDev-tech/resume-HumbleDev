@@ -5,7 +5,10 @@ import { skills } from "@cv"
 ---
 
 
-<Section title="Conocimientos técnicos">
+{
+  skills.length > 0 && (
+    <Section title="Conocimientos técnicos">
+
    <ul>
         {
             skills.map(
@@ -18,7 +21,9 @@ import { skills } from "@cv"
         }
    </ul>
 
-</Section>
+    </Section>
+  )
+}
 
 <style>
     ul {

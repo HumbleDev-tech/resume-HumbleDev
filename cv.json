@@ -1,15 +1,15 @@
 {
   "basics": {
     "name": "Diego Valenzuela",
-    "label": "Ingeniero en informatica",
+    "label": "Ingeniero en Informática",
     "image": "/fat-orange-cat.webp",
-    "email": "diegovalenzuela985@proton.me",
-    "phone": "+34 688888888",
+    "email": "diegovalenzuela985@gmail.com",
+    "phone": "+56 9 3684 9730",
     "url": "",
-    "summary": "Fat orange cat",
+    "summary": "Ingeniero en Informática con experiencia en desarrollo Full Stack (Next.js, React Native, AWS). Especializado en la digitalización de procesos operativos y gestión de proyectos tecnológicos.",
     "location": {
       "address": "",
-      "postalCode": "5750000",
+      "postalCode": "",
       "city": "Achao",
       "countryCode": "CL",
       "region": "Los Lagos"
@@ -30,108 +30,131 @@
   "work": [
     {
       "name": "Cuerpo de Bomberos de Osorno",
-      "position": "Desarrollador Fullstack y web",
+      "position": "Practicante de Ingeniería en Informática",
       "url": "https://www.bomberos.cl/cuerpo-de-bomberos-de-osorno",
-      "startDate": "2026",
-      "endDate": "2026",
-      "summary": "Desarrollo de una aplicación móvil y web en React Native y Next.js para la gestión interna de material mayor del Cuerpo de Bomberos de Osorno, utilizada por sus 8 compañías. Integración con AWS Amplify (autenticación, APIs y almacenamiento), despliegue en Vercel y participación activa en pruebas, documentación y soporte. El sistema optimiza procesos operativos clave de la institución.",
+      "startDate": "2025-01-01",
+      "endDate": "2025-04-01",
+      "summary": "Desarrollo Full Stack de sistema de gestión (Web/Móvil) para 8 compañías utilizando Next.js, React Native y AWS Amplify. Gestión integral del ciclo de vida (QA, despliegue en Vercel y soporte), digitalizando con éxito los procesos operativos clave.",
       "highlights": [
-        "Started the company"
+        "Desarrollo con Next.js y React Native",
+        "Integración con AWS Amplify",
+        "Digitalización de procesos operativos"
       ]
     }
   ],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-
-"education": [
-  {
-    "institution": "Inacap",
-    "url": "https://portal.inacap.cl/",
-    "area": "Ingeniero en Informática",
-    "studyType": "Bachelor",
-    "startDate": "2022-01-01",
-    "endDate": "2025-01-01"
-
-  },
-  {
-    "institution": "Inacap",
-    "url": "https://portal.inacap.cl/",
-    "area": "Analista programador",
-    "studyType": "Master",
-    "startDate": "2025-03-01",
-    "endDate": "2026-01-01"
-  }
-],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021-11-07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014-10-01",
-    "url": "https://publication.com",
-    "summary": "Description…"
-  }],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "INACAP",
+      "url": "https://www.inacap.cl",
+      "area": "Ingeniería en Informática",
+      "studyType": "Bachelor",
+      "startDate": "2021-03-01",
+      "endDate": "2024-12-01",
+      "score": "",
+      "courses": [
+        "Desarrollo de Software",
+        "Arquitectura de Sistemas",
+        "Gestión de Proyectos"
+      ]
+    },
+    {
+      "institution": "INACAP",
+      "url": "https://www.inacap.cl",
+      "area": "Técnico Analista Programador",
+      "studyType": "Technical Degree",
+      "startDate": "2024-03-01",
+      "endDate": "2024-12-01",
+      "score": "",
+      "courses": [
+        "Lógica de Programación",
+        "Bases de Datos",
+        "Desarrollo Web"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Diplomados y Certificaciones",
+      "date": "2024-12-01",
+      "issuer": "INACAP",
+      "url": "https://www.inacap.cl",
+      "summary": "Desarrollo Full Stack, Arquitectura Cloud, Diseño Ágil de Sistemas, Soporte Computacional y Gestión de Bases de Datos",
+      "hours": "+700 horas académicas"
+    }
+  ],
+  "publications": [],
   "skills": [
-    { "name": "HTML" },
-    { "name": "CSS" },
-    { "name": "JavaScript" },
-    { "name": "TypeScript" },
-    { "name": "Node" },
-    { "name": "MySQL" },
-    { "name": "Git" },
-    { "name": "GitHub" },
-    { "name": "Next.js" },
-    { "name": "React" }
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Next.js"
+    },
+    {
+      "name": "Astro"
+    },
+    {
+      "name": "Vite"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Firebase"
+    },
+    {
+      "name": "OpenAI API"
+    },
+    {
+      "name": "Anthropic API"
+    },
+    {
+      "name": "Gemini API"
+    },
+    {
+      "name": "Git"
+    },
+    {
+      "name": "GitHub"
+    },
+    {
+      "name": "Soporte TI"
+    },
+    {
+      "name": "Hardware Maintenance"
+    }
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "fluency": "Native speaker"
-    },
-    {
-      "language": "English",
-      "fluency": "Advanced"
+      "language": "Español",
+      "fluency": "Nativo"
     }
   ],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
+  "interests": [],
+  "references": [],
   "projects": [
     {
-      "name": "CV",
+      "name": "CV Portfolio",
       "isActive": true,
-      "description": "A minimalist portfolio configurable via one JSON",
+      "description": "Portafolio minimalista configurable.",
       "highlights": [
-        "In progress"
+        "Astro",
+        "React",
+        "Tailwind"
       ],
-      "url": "https://github.com/HumbleDev-tech/resume-HumbleDev#"
+      "url": "https://github.com/HumbleDev-tech/resume-HumbleDev",
+      "github": "https://github.com/HumbleDev-tech/resume-HumbleDev"
     }
   ]
 }

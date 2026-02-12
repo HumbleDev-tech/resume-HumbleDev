@@ -4,7 +4,10 @@ import Section from "../Section.astro"
 import { work } from "@cv"
 ---
 
-<Section title="Experiencia laboral">
+{
+  work.length > 0 && (
+    <Section title="Experiencia laboral">
+
   <ul>
     {
       work.map(
@@ -51,7 +54,9 @@ import { work } from "@cv"
       )
     }
   </ul>
-</Section>
+    </Section>
+  )
+}
 
 <style>
 

@@ -79,6 +79,8 @@ interface Certificates {
   date: DateStr,
   issuer: string,
   url: string
+  summary?: string
+  hours?: string
 }
 
 interface Publications {

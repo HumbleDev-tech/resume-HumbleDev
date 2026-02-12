@@ -6,7 +6,10 @@ import { projects } from '@cv'
 ---
 
 
-<Section title="Projectos">
+{
+  projects.length > 0 && (
+    <Section title="Proyectos">
+
     <ul>
         {projects.map(({ url, description, highlights, name, isActive }) => (
             <li>
@@ -31,7 +34,10 @@ import { projects } from '@cv'
             </li>
         ))}
     </ul>
-</Section>  
+    </Section>
+  )
+}
+
 
 
 <style>

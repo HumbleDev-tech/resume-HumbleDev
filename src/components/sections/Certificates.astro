@@ -1,0 +1,99 @@
+---
+import Section from "../Section.astro"
+
+import { certificates } from "@cv"
+---
+
+{
+  certificates.length > 0 && (
+    <Section title="Certificaciones">
+      <ul>
+        {
+          certificates.map(({ name, date, issuer, url, summary, hours }) => {
+            const year = new Date(date).getFullYear()
+            return (
+              <li>
+                <article>
+                  <header>
+                    <div>
+                      <h3>
+                        {url ? (
+                          <a href={url} title={`Ver ${name}`} target="_blank">
+                            {name}
+                          </a>
+                        ) : (
+                          name
+                        )}
+                      </h3>
+                      <h4>{issuer}</h4>
+                    </div>
+
+                    <time>{year}</time>
+                  </header>
+
+                  <footer>
+                    {summary && <p>{summary}</p>}
+                    {hours && <span class="hours">{hours}</span>}
+                  </footer>
+                </article>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </Section>
+  )
+}
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  article h3 {
+    font-weight: 500;
+    color: #111;
+  }
+
+  article h4 {
+    color: #222;
+    font-weight: 400;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  time {
+    color: #555;
+    font-size: 0.85rem;
+    min-width: 102px;
+  }
+
+  @media (width <= 700px) {
+    time {
+      text-align: right;
+    }
+  }
+
+  footer p {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .hours {
+    background-color: #eee;
+    color: #444;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+</style>

@@ -4,7 +4,10 @@ import Section from "../Section.astro"
 import { education } from "@cv"
 ---
 
-<Section title="Educación">
+{
+  education.length > 0 && (
+    <Section title="Educación">
+
   <ul>
     {
       education.map(({ institution, startDate, endDate, area, url }) => {
@@ -35,7 +38,9 @@ import { education } from "@cv"
       })
     }
   </ul>
-</Section>
+    </Section>
+  )
+}
 
 <style>
   ul {
