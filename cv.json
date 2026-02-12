@@ -52,6 +52,7 @@
       "startDate": "2021-03-01",
       "endDate": "2024-12-01",
       "score": "",
+      "duration": "8 Semestres",
       "courses": [
         "Desarrollo de Software",
         "Arquitectura de Sistemas",
@@ -66,6 +67,7 @@
       "startDate": "2024-03-01",
       "endDate": "2024-12-01",
       "score": "",
+      "duration": "4 Semestres",
       "courses": [
         "Lógica de Programación",
         "Bases de Datos",

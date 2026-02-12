@@ -42,7 +42,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 				</a>
 			</span>
 			<footer class="print">
-				{printInfo}
+				{email} &bull; {phone} &bull; {linkedUrl}
 			</footer>
 			<footer class="no-print">
 				{
@@ -124,6 +124,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 		width: 128px;
+		height: 128px;
 		border-radius: 16px;
 	}
 
@@ -154,7 +155,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 		height: 32px;
 		width: 32px;
 		border-radius: 6px;
-		transition: all 0.3s ease;
+		transition: background 0.3s ease, border-color 0.3s ease;
 	}
 
 	footer a:hover {

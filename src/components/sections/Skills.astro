@@ -44,20 +44,22 @@ import { skills } from "@cv"
     @media print {
         ul {
             display: inline;
+            line-height: 1.6; /* Improve readability */
         }
         
         li {
             display: inline;
             background-color: transparent;
             padding: 0;
-            color: black;
-            font-weight: normal;
+            color: #333; /* Darker gray instead of pure black for subtle contrast */
+            font-weight: 500;
             border-radius: 0;
             font-size: 0.85rem;
         }
 
         li::after {
             content: ", ";
+            margin-right: 2px;
         }
 
         li:last-child::after {

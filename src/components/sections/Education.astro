@@ -1,57 +1,112 @@
 ---
 import Section from "../Section.astro"
-
 import { education } from "@cv"
+
+// Group education by institution
+type Education = typeof education[0]
+const educationByInstitution = education.reduce((acc, edu) => {
+  const { institution } = edu
+  if (!acc[institution]) {
+    acc[institution] = []
+  }
+  acc[institution].push(edu)
+  return acc
+}, {} as Record<string, Education[]>)
 ---
 
 {
   education.length > 0 && (
     <Section title="Educación">
-
-  <ul>
-    {
-      education.map(({ institution, startDate, endDate, area, url }) => {
-        const startYear = new Date(startDate).getFullYear()
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Actual"
-        const years = `${startYear} - ${endYear}`
-
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <a href={url} title={`Ver ${institution}`} target="_blank" rel="noopener noreferrer">
-                    <h3>{institution}</h3>
+      <div class="education-container">
+        {
+          Object.entries(educationByInstitution).map(([institution, edus]) => {
+            const institutionUrl = edus[0]?.url;
+            return (
+            <div class="institution-group">
+              <h3>
+                {institutionUrl ? (
+                  <a href={institutionUrl} title={`Ver ${institution}`} target="_blank" rel="noopener noreferrer">
+                    {institution}
                   </a>
-                </div>
+                ) : (
+                  institution
+                )}
+              </h3>
+              <ul>
+                {edus.map(({ area, startDate, endDate, duration }) => {
+                  const startYear = new Date(startDate).getFullYear()
+                  const endYear = endDate != null ? new Date(endDate).getFullYear() : "Actual"
+                  const years = `${startYear} - ${endYear}`
 
-                <time>{years}</time>
-              </header>
-
-              <footer>
-                <p>{area}</p>
-              </footer>
-            </article>
-          </li>
-        )
-      })
-    }
-  </ul>
+                  return (
+                    <li>
+                      <article>
+                        <header>
+                          <h4>
+                            {area}
+                          </h4>
+                          <time>{years}</time>
+                        </header>
+                        <footer>
+                           {duration && <span class="duration">{duration}</span>}
+                        </footer>
+                      </article>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+            )
+          })
+        }
+      </div>
     </Section>
   )
 }
 
 <style>
+  .education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .institution-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .institution-group h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+  }
+
+  .institution-group h3 a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .institution-group h3 a:hover {
+    text-decoration: underline;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 12px;
+    padding-left: 8px;
   }
 
-  article h3 {
-    font-weight: 500;
+  article h4 {
+    font-weight: 400;
     color: var(--color-primary);
+    font-size: 1rem;
+    margin: 0;
   }
 
   article a {
@@ -66,18 +121,52 @@ import { education } from "@cv"
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   time {
     color: var(--color-secondary);
     font-size: 0.85rem;
     min-width: 102px;
+    text-align: right;
+  }
+
+  .duration {
+    background-color: #f3f3f3;
+    color: #444;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+    font-family: var(--font-family-sans);
   }
 
   @media (width <= 700px) {
+    ul {
+      padding-left: 0;
+    }
+    
     time {
       text-align: right;
+    }
+  }
+
+  @media print {
+    .education-container {
+      gap: 16px;
+    }
+    
+    .institution-group {
+      break-inside: avoid;
+    }
+
+    .duration {
+      display: inline-block !important;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #000;
     }
   }
 </style>

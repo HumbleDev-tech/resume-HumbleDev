@@ -99,6 +99,7 @@ interface Education {
   startDate: DateStr
   endDate: DateStr
   score: string
+  duration?: string
   courses: Array<string>
 }
 

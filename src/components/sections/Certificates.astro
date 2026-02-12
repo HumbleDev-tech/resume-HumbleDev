@@ -20,24 +20,28 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
     <Section title="Certificaciones">
       <div class="certificates-container">
         {
-          Object.entries(certificatesByIssuer).map(([issuer, certs]) => (
+          Object.entries(certificatesByIssuer).map(([issuer, certs]) => {
+            const issuerUrl = certs[0]?.url;
+            return (
             <div class="issuer-group">
-              <h3>{issuer}</h3>
+              <h3>
+                {issuerUrl ? (
+                  <a href={issuerUrl} title={`Ver ${issuer}`} target="_blank" rel="noopener noreferrer">
+                    {issuer}
+                  </a>
+                ) : (
+                  issuer
+                )}
+              </h3>
               <ul>
-                {certs.map(({ name, date, url, summary, hours }) => {
+                {certs.map(({ name, date, summary, hours }) => {
                   const year = new Date(date).getFullYear()
                   return (
                     <li>
                       <article>
                         <header>
                           <h4>
-                            {url ? (
-                              <a href={url} title={`Ver ${name}`} target="_blank">
-                                {name}
-                              </a>
-                            ) : (
-                              name
-                            )}
+                            {name}
                           </h4>
                           <time>{year}</time>
                         </header>
@@ -51,7 +55,8 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
                 })}
               </ul>
             </div>
-          ))
+            )
+          })
         }
       </div>
     </Section>
@@ -78,6 +83,15 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
     margin-bottom: 4px;
     border-bottom: 1px solid #eee;
     padding-bottom: 4px;
+  }
+
+  .issuer-group h3 a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .issuer-group h3 a:hover {
+    text-decoration: underline;
   }
 
   ul {
@@ -131,6 +145,7 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
     border-radius: 4px;
     display: inline-block;
     margin-top: 4px;
+    font-family: var(--font-family-sans);
   }
 
   @media (width <= 700px) {
@@ -150,53 +165,48 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
     }
 
     .issuer-group h3 {
-      display: inline;
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 700;
-      border: none;
-      margin: 0;
       color: #000;
-    }
-
-    .issuer-group h3::after {
-       content: ": ";
+      margin-bottom: 2px;
     }
 
     ul {
-      display: inline;
-      padding: 0;
+      padding-left: 0;
+      margin-top: 2px;
     }
 
     li {
-      display: inline !important;
       list-style: none;
-    }
-
-    li::after {
-      content: ", ";
-    }
-
-    li:last-child::after {
-      content: ".";
-    }
-
-    article, header, article h4, header h4 {
-      display: inline !important;
-      color: #000 !important;
-    }
-
-    header div {
-      display: none;
+      margin-bottom: 2px;
     }
     
-    header h4 a {
-      text-decoration: none;
+    article {
+      align-items: center; /* Align items vertically */
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    article h4 {
+      font-size: 0.9rem;
       color: #000 !important;
     }
 
-    /* Ocultar detalles en impresión para ahorrar espacio */
-    time, footer, .hours {
-      display: none !important;
+    .hours {
+      display: inline-block !important;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #000;
+      font-size: 0.65rem;
+    }
+
+    /* Hide summary if desired to save space, or show it */
+    footer p {
+        display: none;
     }
   }
 </style>
