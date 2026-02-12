@@ -1,8 +1,51 @@
 ---
 import Section from '@/components/Section.astro';
+import GitHub from "@/icons/GitHub.astro"
+import HTML from "@/icons/html.astro"
+import CSS from "@/icons/css.astro"
+import JavaScript from "@/icons/JavaScript.astro"
+import TypeScript from "@/icons/TypeScript.astro"
+import React from "@/icons/React.astro"
+import Node from "@/icons/node.astro"
+import MySQL from "@/icons/mysql.astro"
+import Git from "@/icons/Git.astro"
+import Tailwind from "@/icons/tailwind.astro"
+import Next from "@/icons/Next.astro"
+import Python from "@/icons/Python.astro"
+import AstroIcon from "@/icons/AstroIcon.astro"
+import Vite from "@/icons/Vite.astro"
+import AWS from "@/icons/AWS.astro"
+import Firebase from "@/icons/Firebase.astro"
+import AI from "@/icons/AI.astro"
+import Hardware from "@/icons/Hardware.astro"
+import Support from "@/icons/Support.astro"
 
 import { projects } from '@cv'
 
+const ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwind: Tailwind,
+  "Tailwind CSS": Tailwind,
+  Python,
+  Astro: AstroIcon,
+  Vite,
+  AWS,
+  Firebase,
+  "OpenAI API": AI,
+  "Anthropic API": AI,
+  "Gemini API": AI,
+  "Soporte TI": Support,
+  "Hardware Maintenance": Hardware,
+}
 ---
 
 
@@ -11,24 +54,35 @@ import { projects } from '@cv'
     <Section title="Proyectos" className="no-print">
 
     <ul>
-        {projects.map(({ url, description, highlights, name, isActive }) => (
+        {projects.map(({ url, description, highlights, name, isActive, github }) => (
             <li>
                 <article>
                     <header>
                         <h3>
-                        <a href={url} title={`Ver el proyecto ${name}`}>
+                        <a href={url} title={`Ver el proyecto ${name}`} target="_blank">
                             {name}
                         </a>
                         {
-                            isActive && <span>&bull;</span>
+                            github && (
+                                <a class="github-code-link" href={github} target="_blank" title="Ver código fuente en GitHub">
+                                    <GitHub />
+                                </a>
+                            )
                         }
                         </h3>
                         <p>{description}</p>
                     </header>
                     <footer>
-                            {highlights.map((highlight) => (
-                                <span>{highlight}</span>
-                            ))}
+                            {highlights.map((highlight) => {
+                                const iconName = highlight === "Next.js" ? "Next" : highlight
+                                const Icon = ICONS[iconName]
+                                return (
+                                    <span>
+                                        {Icon && <Icon />}
+                                        {highlight}
+                                    </span>
+                                )
+                            })}
                     </footer>
                 </article>
             </li>
@@ -45,7 +99,7 @@ import { projects } from '@cv'
         display: grid;
         grid-template-columns: repeat(
             auto-fit, 
-            minmax(300px, 1fr)
+            minmax(200px, 1fr)
             );
             gap: 1rem;
             margin-inline: -16px;
@@ -58,26 +112,45 @@ import { projects } from '@cv'
         flex-direction: column;
         padding: 16px;
         height: 100%;
+        transition: all 0.3s ease;
     }
+
+    article:hover {
+        border-color: #ddd;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
     article header {
         flex : 1;
     }
     article h3 {
         margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
-    article h3 span {
-        color: rgb(0, 168, 6);
+    
+    .github-code-link {
+        margin-left: auto;
+        color: #555;
     }
+    
+    .github-code-link:hover {
+        color: #000;
+    }
+
     article p {
         line-height: 1.2rem;
         font-size: 0.75rem;
         margin-bottom: 4px;
+        color: #666;
     }
-    article a {
+    article header h3 a {
         color: #111;
-        transition: color 0.3s ease;
+        font-weight: 600;
+        text-decoration: none;
     }
-    article a:hover {
+    article header h3 a:hover {
         text-decoration: underline;
     }
     footer {
@@ -87,12 +160,16 @@ import { projects } from '@cv'
         font-size: 0.6rem;
     }
     footer span {
-        background-color: #eee;
+        background-color: #f3f3f3;
         padding: 0.2rem 0.6rem;
         color: #444;
         border-radius: 6px;
         font-size: 0.6rem;
         font-weight: 500;
+        border: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
 </style>
