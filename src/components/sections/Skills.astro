@@ -33,11 +33,35 @@ import { skills } from "@cv"
     }
 
     li {
-        background-color: #eee;
+        background-color: var(--color-accent);
         padding: 0.2rem 0.6rem;
-        color: black;
+        color: var(--color-primary);
         border-radius: 6px;
         font-size: 0.8rem;
         font-weight: 500;
+    }
+
+    @media print {
+        ul {
+            display: inline;
+        }
+        
+        li {
+            display: inline;
+            background-color: transparent;
+            padding: 0;
+            color: black;
+            font-weight: normal;
+            border-radius: 0;
+            font-size: 0.85rem;
+        }
+
+        li::after {
+            content: ", ";
+        }
+
+        li:last-child::after {
+            content: ".";
+        }
     }
 </style>

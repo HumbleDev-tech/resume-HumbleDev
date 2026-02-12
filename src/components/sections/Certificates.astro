@@ -2,98 +2,201 @@
 import Section from "../Section.astro"
 
 import { certificates } from "@cv"
+
+// Group certificates by issuer
+type Certificate = typeof certificates[0]
+const certificatesByIssuer = certificates.reduce((acc, certificate) => {
+  const { issuer } = certificate
+  if (!acc[issuer]) {
+    acc[issuer] = []
+  }
+  acc[issuer].push(certificate)
+  return acc
+}, {} as Record<string, Certificate[]>)
 ---
 
 {
   certificates.length > 0 && (
     <Section title="Certificaciones">
-      <ul>
+      <div class="certificates-container">
         {
-          certificates.map(({ name, date, issuer, url, summary, hours }) => {
-            const year = new Date(date).getFullYear()
-            return (
-              <li>
-                <article>
-                  <header>
-                    <div>
-                      <h3>
-                        {url ? (
-                          <a href={url} title={`Ver ${name}`} target="_blank">
-                            {name}
-                          </a>
-                        ) : (
-                          name
-                        )}
-                      </h3>
-                      <h4>{issuer}</h4>
-                    </div>
-
-                    <time>{year}</time>
-                  </header>
-
-                  <footer>
-                    {summary && <p>{summary}</p>}
-                    {hours && <span class="hours">{hours}</span>}
-                  </footer>
-                </article>
-              </li>
-            )
-          })
+          Object.entries(certificatesByIssuer).map(([issuer, certs]) => (
+            <div class="issuer-group">
+              <h3>{issuer}</h3>
+              <ul>
+                {certs.map(({ name, date, url, summary, hours }) => {
+                  const year = new Date(date).getFullYear()
+                  return (
+                    <li>
+                      <article>
+                        <header>
+                          <h4>
+                            {url ? (
+                              <a href={url} title={`Ver ${name}`} target="_blank">
+                                {name}
+                              </a>
+                            ) : (
+                              name
+                            )}
+                          </h4>
+                          <time>{year}</time>
+                        </header>
+                        <footer>
+                           {summary && <p>{summary}</p>}
+                           {hours && <span class="hours">{hours}</span>}
+                        </footer>
+                      </article>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          ))
         }
-      </ul>
+      </div>
     </Section>
   )
 }
 
 <style>
+  .certificates-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .issuer-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .issuer-group h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: #111;
+    gap: 12px;
+    padding-left: 8px; 
   }
 
   article h4 {
-    color: #222;
     font-weight: 400;
+    color: var(--color-primary);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  article a {
+    color: var(--color-primary);
+  }
+
+  article a:hover {
+    text-decoration: underline;
   }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   time {
-    color: #555;
+    color: var(--color-secondary);
     font-size: 0.85rem;
     min-width: 102px;
-  }
-
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
+    text-align: right;
   }
 
   footer p {
-    color: #666;
+    color: var(--color-secondary);
     font-size: 0.8rem;
-    margin-bottom: 4px;
+    margin: 0;
   }
 
   .hours {
-    background-color: #eee;
+    background-color: #f3f3f3;
     color: #444;
     font-size: 0.7rem;
     font-weight: 500;
-    padding: 0.2rem 0.5rem;
+    padding: 0.1rem 0.4rem;
     border-radius: 4px;
     display: inline-block;
+    margin-top: 4px;
+  }
+
+  @media (width <= 700px) {
+    ul {
+      padding-left: 0;
+    }
+  }
+
+  @media print {
+    .certificates-container {
+      gap: 12px;
+    }
+    
+    .issuer-group {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .issuer-group h3 {
+      display: inline;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      margin: 0;
+      color: #000;
+    }
+
+    .issuer-group h3::after {
+       content: ": ";
+    }
+
+    ul {
+      display: inline;
+      padding: 0;
+    }
+
+    li {
+      display: inline !important;
+      list-style: none;
+    }
+
+    li::after {
+      content: ", ";
+    }
+
+    li:last-child::after {
+      content: ".";
+    }
+
+    article, header, article h4, header h4 {
+      display: inline !important;
+      color: #000 !important;
+    }
+
+    header div {
+      display: none;
+    }
+    
+    header h4 a {
+      text-decoration: none;
+      color: #000 !important;
+    }
+
+    /* Ocultar detalles en impresión para ahorrar espacio */
+    time, footer, .hours {
+      display: none !important;
+    }
   }
 </style>

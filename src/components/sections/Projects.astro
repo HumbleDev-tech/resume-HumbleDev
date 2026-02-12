@@ -8,7 +8,7 @@ import { projects } from '@cv'
 
 {
   projects.length > 0 && (
-    <Section title="Proyectos">
+    <Section title="Proyectos" className="no-print">
 
     <ul>
         {projects.map(({ url, description, highlights, name, isActive }) => (
@@ -93,4 +93,5 @@ import { projects } from '@cv'
         font-size: 0.6rem;
         font-weight: 500;
     }
+
 </style>

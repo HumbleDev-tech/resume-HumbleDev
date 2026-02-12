@@ -76,12 +76,44 @@
   "awards": [],
   "certificates": [
     {
-      "name": "Diplomados y Certificaciones",
+      "name": "Diplomado Desarrollo Full Stack",
       "date": "2024-12-01",
       "issuer": "INACAP",
       "url": "https://www.inacap.cl",
-      "summary": "Desarrollo Full Stack, Arquitectura Cloud, Diseño Ágil de Sistemas, Soporte Computacional y Gestión de Bases de Datos",
-      "hours": "+700 horas académicas"
+      "summary": "Parte del programa de educación continua",
+      "hours": "162 horas académicas"
+    },
+    {
+      "name": "Arquitectura Cloud",
+      "date": "2024-12-01",
+      "issuer": "INACAP",
+      "url": "https://www.inacap.cl",
+      "summary": "Parte del programa de educación continua",
+      "hours": "198 horas académicas"
+    },
+    {
+      "name": "Diseño Ágil de Sistemas",
+      "date": "2024-12-01",
+      "issuer": "INACAP",
+      "url": "https://www.inacap.cl",
+      "summary": "Parte del programa de educación continua",
+      "hours": "126 horas académicas"
+    },
+    {
+      "name": "Soporte Computacional",
+      "date": "2024-12-01",
+      "issuer": "INACAP",
+      "url": "https://www.inacap.cl",
+      "summary": "Parte del programa de educación continua",
+      "hours": "126 horas académicas"
+    },
+    {
+      "name": "Gestión de Bases de Datos",
+      "date": "2024-12-01",
+      "issuer": "INACAP",
+      "url": "https://www.inacap.cl",
+      "summary": "Parte del programa de educación continua",
+      "hours": "126 horas académicas"
     }
   ],
   "publications": [],
