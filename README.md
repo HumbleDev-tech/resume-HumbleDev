@@ -54,9 +54,16 @@ Para obtener la versión en PDF del currículum:
 3.  Selecciona "Guardar como PDF".
 4.  Asegúrate de que la opción "Gráficos de fondo" esté activada para conservar los estilos visuales.
 
-## 🚢 Despliegue
+## 🚢 Despliegue con Datos Privados (Netlify/Vercel)
 
-Este proyecto está configurado para desplegarse fácilmente en plataformas como **Vercel**, **Netlify** o **GitHub Pages**.
+Si quieres desplegar tu propio currículum sin hacer público tu archivo `cv.json`:
+
+1.  Copia el contenido de tu archivo `cv.json` local.
+2.  Ve a la configuración de tu proyecto en Netlify o Vercel.
+3.  En la sección de **Variables de Entorno** (Environment Variables), añade una nueva variable llamada:
+    -   **Clave**: `CV_DATA`
+    -   **Valor**: [Pega aquí todo el contenido JSON de tu archivo]
+4.  Realiza un nuevo despliegue. El script de construcción generará automáticamente tu `cv.json` privado solo para el build.
 
 ---
 
