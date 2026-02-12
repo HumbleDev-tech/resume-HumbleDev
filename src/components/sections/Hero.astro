@@ -128,6 +128,13 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 		border-radius: 16px;
 	}
 
+	@media (width <= 700px) {
+		img {
+			width: 96px;
+			height: 96px;
+		}
+	}
+
 	span {
 		color: var(--color-secondary);
 		display: flex;
