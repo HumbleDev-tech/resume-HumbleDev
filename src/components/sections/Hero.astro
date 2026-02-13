@@ -20,8 +20,6 @@ const SOCIAL_ICONS: SocialIcon = {
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
-
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 ---
 
 <Section>
@@ -153,11 +151,11 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 	}
 
 	footer a {
-		color: #777;
+		color: var(--color-muted);
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		border: 1px solid #eee;
+		border: 1px solid var(--color-border);
 		padding: 4px;
 		height: 32px;
 		width: 32px;
@@ -166,11 +164,11 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 	}
 
 	footer a:hover {
-		background: #eee;
-		border: 1px solid #ddd;
+		background: var(--color-accent);
+		border: 1px solid var(--color-border-hover);
 	}
 	.location-link {
-		color: #666;
+		color: var(--color-subtle);
 		display: flex;
 		align-items: center;
 		gap: 0.25rem;

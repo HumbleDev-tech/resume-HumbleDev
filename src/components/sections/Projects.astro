@@ -106,7 +106,7 @@ const ICONS: Record<string, any> = {
     }
     article {
         border-radius: 8px;
-        border: 1px solid #f2f2f2;
+        border: 1px solid var(--color-card-border);
         gap: 16px;
         display: flex;
         flex-direction: column;
@@ -116,8 +116,8 @@ const ICONS: Record<string, any> = {
     }
 
     article:hover {
-        border-color: #ddd;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        border-color: var(--color-border-hover);
+        box-shadow: 0 4px 12px var(--color-card-shadow);
     }
 
     article header {
@@ -132,21 +132,21 @@ const ICONS: Record<string, any> = {
     
     .github-code-link {
         margin-left: auto;
-        color: #555;
+        color: var(--color-secondary);
     }
     
     .github-code-link:hover {
-        color: #000;
+        color: var(--color-primary);
     }
 
     article p {
         line-height: 1.2rem;
         font-size: 0.75rem;
         margin-bottom: 4px;
-        color: #666;
+        color: var(--color-subtle);
     }
     article header h3 a {
-        color: #111;
+        color: var(--color-link);
         font-weight: 600;
         text-decoration: none;
     }
@@ -160,13 +160,13 @@ const ICONS: Record<string, any> = {
         font-size: 0.6rem;
     }
     footer span {
-        background-color: #f3f3f3;
+        background-color: var(--color-tag-bg);
         padding: 0.2rem 0.6rem;
-        color: #444;
+        color: var(--color-tag-text);
         border-radius: 6px;
         font-size: 0.6rem;
         font-weight: 500;
-        border: 1px solid #eee;
+        border: 1px solid var(--color-tag-border);
         display: flex;
         align-items: center;
         gap: 6px;

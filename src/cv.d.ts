@@ -63,8 +63,8 @@ interface Volunteer {
 
 interface Skills {
   name: string
-  level: string
-  keywords: Array<string>
+  level?: string
+  keywords?: Array<string>
 }
 
 interface Awards {
@@ -109,10 +109,11 @@ interface Languages {
 }
 
 type Language =
-  "Spanish"
+  "Español"
+  | "Spanish"
   | "English"
   | "German"
-  | "France"
+  | "French"
   | "Italian"
   | "Korean"
   | "Portuguese"
@@ -145,4 +146,4 @@ interface References {
   reference: string
 }
 
-type Highlight = Array<String>
+type Highlight = Array<string>

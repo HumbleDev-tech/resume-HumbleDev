@@ -7,7 +7,7 @@ interface Props {
 
 const { title } = Astro.props
 
-const { image, summary, url } = basics
+const { image, summary, url, name } = basics
 ---
 
 <!doctype html>
@@ -19,24 +19,24 @@ const { image, summary, url } = basics
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href={image} />
+    <link rel="canonical" href={url || Astro.url.href} />
+    <meta name="author" content={name} />
 
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={url || Astro.url.href} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={summary} />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content={image} />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
-    <meta property="twitter:url" content={url} />
+    {url && <meta property="twitter:domain" content={url.split("//")[1]?.split("/")[0] ?? ''} />}
+    <meta property="twitter:url" content={url || Astro.url.href} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:image" content={image} />
   </head>
   <body>
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
 
@@ -46,15 +46,54 @@ const { image, summary, url } = basics
     --color-primary: #000;
     --color-secondary: #555;
     --color-accent: #eee;
+    --color-bg: #fff;
+    --color-bg-secondary: #fdfdfd;
+    --color-border: #eee;
+    --color-border-hover: #ddd;
+    --color-muted: #777;
+    --color-subtle: #666;
+    --color-tag-bg: #f3f3f3;
+    --color-tag-text: #444;
+    --color-tag-border: #eee;
+    --color-kbd-bg: #eee;
+    --color-card-border: #f2f2f2;
+    --color-card-shadow: rgba(0,0,0,0.05);
+    --color-tooltip-bg: #333;
+    --color-tooltip-text: #fff;
+    --color-link: #111;
     --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     --font-family-mono: Menlo, Monaco, Lucida Console, "Courier New", Courier, monospace;
   }
 
+  [data-theme="dark"] {
+    --color-text: #ccc;
+    --color-primary: #f0f0f0;
+    --color-secondary: #aaa;
+    --color-accent: #2a2a3e;
+    --color-bg: #111827;
+    --color-bg-secondary: #1f2937;
+    --color-border: #374151;
+    --color-border-hover: #4b5563;
+    --color-muted: #9ca3af;
+    --color-subtle: #d1d5db;
+    --color-tag-bg: #1f2937;
+    --color-tag-text: #d1d5db;
+    --color-tag-border: #374151;
+    --color-kbd-bg: #374151;
+    --color-card-border: #374151;
+    --color-card-shadow: rgba(0,0,0,0.3);
+    --color-tooltip-bg: #4b5563;
+    --color-tooltip-text: #f3f4f6;
+    --color-link: #e5e7eb;
+  }
+
   html {
     font-family: var(--font-family-mono);
-    background: #fff;
+    background: var(--color-bg);
+    color: var(--color-text);
     letter-spacing: -0.025rem;
     touch-action: manipulation;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body,
@@ -122,32 +161,30 @@ const { image, summary, url } = basics
     article {
       break-inside: avoid;
     }
-  }
 
-  @page {
-    margin: 1cm;
-  }
-
-  @media print {
     body {
       font-size: 0.85rem;
     }
+
     main {
       padding: 0 !important;
     }
+
     h1 {
       font-size: 1.8rem;
     }
+
     h2 {
       font-size: 1.3rem;
       margin-bottom: 4px;
     }
+
     section {
       margin-bottom: 16px !important;
     }
+  }
 
-    .no-print {
-      display: none !important;
-    }
+  @page {
+    margin: 1cm;
   }
 </style>
