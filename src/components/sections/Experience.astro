@@ -1,5 +1,6 @@
 ---
 import Section from "../Section.astro"
+import Icon from "@/components/Icon.astro"
 
 import { work } from "@cv"
 ---
@@ -49,7 +50,10 @@ import { work } from "@cv"
                   {highlights.length > 0 && (
                     <div class="highlights">
                       {highlights.map((highlight) => (
-                        <span class="highlight">{highlight}</span>
+                        <span class="highlight">
+                          <Icon name={highlight} />
+                          {highlight}
+                        </span>
                       ))}
                     </div>
                   )}
@@ -153,6 +157,9 @@ import { work } from "@cv"
   }
 
   .highlight {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     background-color: var(--color-tag-bg);
     color: var(--color-tag-text);
     font-size: 0.7rem;
@@ -174,15 +181,31 @@ import { work } from "@cv"
     }
 
     .highlights {
-      margin-top: 3px;
+      display: inline; /* Linear list */
+      margin-top: 4px;
     }
 
     .highlight {
-      font-size: 0.6rem;
-      padding: 0.05rem 0.35rem;
-      border: 1px solid #ddd;
-      background: #fff;
-      color: #000;
+      display: inline;
+      font-size: 0.75rem;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: #333;
+    }
+
+    /* Hide icons in print */
+    .highlight :global(svg) {
+      display: none;
+    }
+
+    .highlight::after {
+      content: ", ";
+      margin-right: 2px;
+    }
+
+    .highlight:last-child::after {
+      content: ".";
     }
 
     time {

@@ -1,51 +1,9 @@
 ---
 import Section from '@/components/Section.astro';
+import Icon from '@/components/Icon.astro';
 import GitHub from "@/icons/GitHub.astro"
-import HTML from "@/icons/html.astro"
-import CSS from "@/icons/css.astro"
-import JavaScript from "@/icons/JavaScript.astro"
-import TypeScript from "@/icons/TypeScript.astro"
-import React from "@/icons/React.astro"
-import Node from "@/icons/node.astro"
-import MySQL from "@/icons/mysql.astro"
-import Git from "@/icons/Git.astro"
-import Tailwind from "@/icons/tailwind.astro"
-import Next from "@/icons/Next.astro"
-import Python from "@/icons/Python.astro"
-import AstroIcon from "@/icons/AstroIcon.astro"
-import Vite from "@/icons/Vite.astro"
-import AWS from "@/icons/AWS.astro"
-import Firebase from "@/icons/Firebase.astro"
-import AI from "@/icons/AI.astro"
-import Hardware from "@/icons/Hardware.astro"
-import Support from "@/icons/Support.astro"
 
 import { projects } from '@cv'
-
-const ICONS: Record<string, any> = {
-  HTML,
-  CSS,
-  JavaScript,
-  TypeScript,
-  React,
-  Node,
-  MySQL,
-  Git,
-  GitHub,
-  Next,
-  Tailwind: Tailwind,
-  "Tailwind CSS": Tailwind,
-  Python,
-  Astro: AstroIcon,
-  Vite,
-  AWS,
-  Firebase,
-  "OpenAI API": AI,
-  "Anthropic API": AI,
-  "Gemini API": AI,
-  "Soporte TI": Support,
-  "Hardware Maintenance": Hardware,
-}
 ---
 
 
@@ -74,11 +32,9 @@ const ICONS: Record<string, any> = {
                     </header>
                     <footer>
                             {highlights.map((highlight) => {
-                                const iconName = highlight === "Next.js" ? "Next" : highlight
-                                const Icon = ICONS[iconName]
                                 return (
                                     <span>
-                                        {Icon && <Icon />}
+                                        <Icon name={highlight} />
                                         {highlight}
                                     </span>
                                 )
@@ -170,6 +126,41 @@ const ICONS: Record<string, any> = {
         display: flex;
         align-items: center;
         gap: 6px;
+    }
+
+    @media print {
+        article {
+            border: none;
+            box-shadow: none;
+            padding: 10px 0; /* Minimal padding for print */
+        }
+
+        footer {
+            display: inline;
+        }
+
+        footer span {
+            display: inline;
+            border: none;
+            background: transparent;
+            padding: 0;
+            color: #333;
+            font-size: 0.75rem;
+        }
+
+        /* Hide icons in print */
+        footer span :global(svg) {
+            display: none;
+        }
+
+        footer span::after {
+            content: ", ";
+            margin-right: 2px;
+        }
+
+        footer span:last-child::after {
+            content: ".";
+        }
     }
 
 </style>

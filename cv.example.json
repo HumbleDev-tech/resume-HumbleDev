@@ -1,0 +1,120 @@
+{
+    "basics": {
+        "name": "Tu Nombre",
+        "label": "Tu Título Profesional",
+        "image": "/profile.webp",
+        "email": "tu@email.com",
+        "phone": "+56 9 0000 0000",
+        "url": "https://tu-dominio.dev",
+        "summary": "Breve descripción profesional. Incluye tu experiencia, habilidades clave y lo que te diferencia. Máximo 2-3 líneas para mantener el CV compacto.",
+        "location": {
+            "address": "",
+            "postalCode": "",
+            "city": "Tu Ciudad",
+            "countryCode": "CL",
+            "region": "Tu Región"
+        },
+        "profiles": [
+            {
+                "network": "LinkedIn",
+                "username": "tu-usuario",
+                "url": "https://www.linkedin.com/in/tu-usuario/"
+            },
+            {
+                "network": "GitHub",
+                "username": "tu-usuario",
+                "url": "https://github.com/tu-usuario"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Nombre de la Empresa",
+            "position": "Tu Cargo",
+            "url": "https://empresa.com",
+            "startDate": "2024-01-01",
+            "endDate": "2025-01-01",
+            "summary": "Descripción de tus responsabilidades y logros. Enfócate en resultados medibles y tecnologías usadas.",
+            "highlights": [
+                "React",
+                "TypeScript",
+                "Node.js"
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Tu Universidad",
+            "url": "https://universidad.cl",
+            "area": "Tu Carrera",
+            "studyType": "Bachelor",
+            "startDate": "2020-03-01",
+            "endDate": "2024-12-01",
+            "score": "",
+            "duration": "8 Semestres",
+            "courses": [
+                "Curso relevante 1",
+                "Curso relevante 2"
+            ]
+        }
+    ],
+    "awards": [],
+    "certificates": [
+        {
+            "name": "Nombre del Certificado",
+            "date": "2024-12-01",
+            "issuer": "Institución",
+            "url": "https://institucion.cl",
+            "summary": "Breve descripción",
+            "hours": "100 horas académicas"
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "TypeScript"
+        },
+        {
+            "name": "React"
+        },
+        {
+            "name": "Node.js"
+        },
+        {
+            "name": "Git"
+        },
+        {
+            "name": "GitHub"
+        }
+    ],
+    "languages": [
+        {
+            "language": "Español",
+            "fluency": "Nativo"
+        },
+        {
+            "language": "English",
+            "fluency": "Intermediate"
+        }
+    ],
+    "interests": [],
+    "references": [],
+    "projects": [
+        {
+            "name": "Mi Proyecto",
+            "isActive": true,
+            "description": "Descripción breve del proyecto. Qué problema resuelve y qué tecnologías usa.",
+            "highlights": [
+                "React",
+                "TypeScript",
+                "Firebase"
+            ],
+            "url": "https://mi-proyecto.dev",
+            "github": "https://github.com/usuario/proyecto"
+        }
+    ]
+}

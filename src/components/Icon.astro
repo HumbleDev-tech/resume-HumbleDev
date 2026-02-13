@@ -1,0 +1,71 @@
+---
+/**
+ * Icon.astro — Centralized icon renderer
+ * 
+ * Renders an SVG icon by name. The name must match a key in the ICONS map.
+ * Used by Skills, Projects, and Experience to avoid duplicating icon imports.
+ *
+ * Usage: <Icon name="React" />
+ *        <Icon name="Next.js" />
+ */
+
+import HTML from "@/icons/html.astro"
+import CSS from "@/icons/css.astro"
+import JavaScript from "@/icons/JavaScript.astro"
+import TypeScript from "@/icons/TypeScript.astro"
+import React from "@/icons/React.astro"
+import Node from "@/icons/node.astro"
+import MySQL from "@/icons/mysql.astro"
+import Git from "@/icons/Git.astro"
+import GitHub from "@/icons/GitHub.astro"
+import Tailwind from "@/icons/tailwind.astro"
+import Next from "@/icons/Next.astro"
+import Python from "@/icons/Python.astro"
+import AstroIcon from "@/icons/AstroIcon.astro"
+import Vite from "@/icons/Vite.astro"
+import AWS from "@/icons/AWS.astro"
+import Firebase from "@/icons/Firebase.astro"
+import AI from "@/icons/AI.astro"
+import Hardware from "@/icons/Hardware.astro"
+import Support from "@/icons/Support.astro"
+
+interface Props {
+  name: string
+}
+
+const { name } = Astro.props
+
+const ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  "React Native": React,
+  Node,
+  "Node.js": Node,
+  MySQL,
+  Git,
+  GitHub,
+  "Next.js": Next,
+  Next,
+  Tailwind,
+  "Tailwind CSS": Tailwind,
+  Python,
+  Astro: AstroIcon,
+  Vite,
+  AWS,
+  "AWS Amplify": AWS,
+  Firebase,
+  "OpenAI API": AI,
+  "Anthropic API": AI,
+  "Gemini API": AI,
+  "Soporte TI": Support,
+  "Hardware Maintenance": Hardware,
+  Vercel: Next,
+}
+
+const IconComponent = ICONS[name]
+---
+
+{IconComponent && <IconComponent />}

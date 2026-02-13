@@ -1,70 +1,97 @@
-# Portafolio y CV - Plantilla Astro
+# 📄 CV Portfolio — Astro Theme
 
-Esta es una plantilla minimalista y configurable para crear un **Portafolio y Currículum Vitae** digital. Está desarrollada con **Astro** para asegurar un rendimiento óptimo, accesibilidad y una excelente experiencia de usuario.
+Portafolio/CV minimalista, accesible y optimizado para SEO. Construido con [Astro](https://astro.build).
 
-El proyecto está diseñado para que puedas personalizarlo fácilmente con tus propios datos utilizando un archivo JSON, sin necesidad de tocar el código fuente principal.
+> Basado en el diseño de [Bartosz Jarocki](https://github.com/BartoszJarocki/cv) y [midudev](https://github.com/midudev/minimalist-portfolio-json).
 
-## 🚀 Tecnologías
+## ✨ Features
 
--   **[Astro](https://astro.build/)**: Framework web para contenido estático y dinámico.
--   **HTML5 & CSS3**: Maquetación semántica y estilos modernos.
--   **TypeScript**: Para un código más robusto y mantenible.
--   **Diseño Responsivo**: Adaptado a móviles, tablets y escritorio.
--   **Optimización para Impresión**: Estilos específicos (`@media print`) para generar un PDF limpio y profesional directamente desde el navegador.
+- 🌗 **Modo oscuro** con toggle y persistencia en localStorage
+- 🖨️ **Optimizado para impresión** — todo cabe en una sola página A4
+- 📱 **Responsive** — mobile-first con breakpoints adaptativos
+- ♿ **Accesible** — skip link, aria-labels, botones semánticos
+- 🔍 **SEO completo** — Open Graph, Twitter Cards, canonical, robots.txt
+- ⌨️ **Paleta de comandos** — `Ctrl+K` para navegación rápida
+- 🎯 **Datos desde JSON** — todo se configura editando `cv.json`
+- 🏷️ **Iconos automáticos** — los highlights muestran iconos de tecnologías
+- 🚀 **Deploy seguro** — soporta variable de entorno `CV_DATA` para datos privados
 
-## 🛠️ Instalación y Configuración
+## 🚀 Quick Start
 
-1.  **Clonar el repositorio:**
+```bash
+# Clonar el repositorio
+git clone https://github.com/HumbleDev-tech/resume-HumbleDev.git
+cd resume-HumbleDev
 
-    ```bash
-    git clone https://github.com/tu-usuario/tu-repo.git
-    cd tu-repo
-    ```
+# Instalar dependencias
+npm install
 
-2.  **Instalar dependencias:**
+# Editar tu información
+cp cv.example.json cv.json
+# Edita cv.json con tus datos
 
-    ```bash
-    npm install
-    ```
+# Iniciar dev server
+npm run dev
+```
 
-3.  **Configurar tus datos:**
+## 📝 Personalización
 
-    El proyecto utiliza un archivo `cv.json` para cargar toda la información. Por seguridad, este archivo está ignorado por Git para proteger tus datos personales.
+### 1. Editar `cv.json`
 
-    -   Renombra el archivo `cv.template.json` a `cv.json`.
-    -   Abre `cv.json` y rellena los campos con tu información real (Experiencia, Educación, Proyectos, etc.).
+Toda tu información personal está en `cv.json`. Edita las secciones:
 
-    ```bash
-    cp cv.template.json cv.json
-    ```
+| Sección | Descripción |
+|---|---|
+| `basics` | Nombre, título, email, teléfono, URL, foto, ubicación, redes |
+| `work` | Experiencia laboral con highlights de tecnologías |
+| `education` | Formación académica |
+| `certificates` | Certificaciones profesionales |
+| `skills` | Conocimientos técnicos (aparecen con iconos automáticamente) |
+| `languages` | Idiomas y nivel de fluidez |
+| `projects` | Proyectos personales/profesionales |
 
-4.  **Iniciar el servidor de desarrollo:**
+### 2. Agregar iconos de tecnologías
 
-    ```bash
-    npm run dev
-    ```
+Los `highlights` en experiencia y proyectos muestran iconos automáticamente si el nombre coincide con un icono registrado en `src/components/Icon.astro`.
 
-    El sitio estará disponible en `http://localhost:4321`.
+**Iconos disponibles:** HTML, CSS, JavaScript, TypeScript, React, React Native, Node.js, Next.js, Python, Astro, Vite, Tailwind CSS, AWS, AWS Amplify, Firebase, MySQL, Git, GitHub, OpenAI API, Anthropic API, Gemini API, y más.
 
-## 📄 Generar PDF
+Para agregar un nuevo icono:
+1. Crea el SVG en `src/icons/NuevoIcono.astro`
+2. Importa y registra en `src/components/Icon.astro`
 
-Para obtener la versión en PDF del currículum:
-1.  Abre el sitio en tu navegador.
-2.  Presiona `Ctrl + P` (o `Cmd + P` en Mac).
-3.  Selecciona "Guardar como PDF".
-4.  Asegúrate de que la opción "Gráficos de fondo" esté activada para conservar los estilos visuales.
+### 3. Deploy privado con `CV_DATA`
 
-## 🚢 Despliegue con Datos Privados (Netlify/Vercel)
+Para mantener tus datos privados en producción:
 
-Si quieres desplegar tu propio currículum sin hacer público tu archivo `cv.json`:
+```bash
+# En tu plataforma de deploy (Vercel, Netlify, etc.)
+CV_DATA='{"basics":{"name":"Tu Nombre",...}}'
+```
 
-1.  Copia el contenido de tu archivo `cv.json` local.
-2.  Ve a la configuración de tu proyecto en Netlify o Vercel.
-3.  En la sección de **Variables de Entorno** (Environment Variables), añade una nueva variable llamada:
-    -   **Clave**: `CV_DATA`
-    -   **Valor**: [Pega aquí todo el contenido JSON de tu archivo]
-4.  Realiza un nuevo despliegue. El script de construcción generará automáticamente tu `cv.json` privado solo para el build.
+El script `scripts/generate-cv.js` genera `cv.json` desde esta variable en build time.
 
----
+## 🏗️ Estructura del Proyecto
 
-Desarrollado con ❤️ por la comunidad open source.
+```
+src/
+├── components/
+│   ├── Icon.astro          # Mapa centralizado de iconos
+│   ├── Section.astro       # Wrapper reutilizable de secciones
+│   ├── ThemeToggle.astro   # Toggle de modo oscuro
+│   ├── KeyboardManager.astro
+│   └── sections/           # Componentes de cada sección del CV
+├── icons/                  # SVGs de tecnologías
+├── layouts/
+│   └── Layout.astro        # Layout base con CSS custom properties
+├── pages/
+│   └── index.astro         # Página principal
+├── cv.d.ts                 # Tipos TypeScript
+└── env.d.ts
+cv.json                     # TUS datos (gitignored en producción)
+cv.example.json             # Template de ejemplo
+```
+
+## 📄 Licencia
+
+MIT — Usa, modifica y comparte libremente.

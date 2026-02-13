@@ -221,4 +221,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
       color: var(--color-muted);
     }
   }
+
+  /* Force hotkeypad clean theme variables */
+  :global([data-theme="dark"] #hotkeypad) {
+    --hotkeypad-bg-container: var(--color-bg);
+    --hotkeypad-bg-item-hover: var(--color-bg-secondary);
+    --hotkeypad-border-container: var(--color-border);
+    --hotkeypad-fg-muted: var(--color-muted);
+    --hotkeypad-bg-backdrop: rgba(0, 0, 0, 0.4);
+    --hotkeypad-bg-kbd: var(--color-kbd-bg);
+  }
 </style>
