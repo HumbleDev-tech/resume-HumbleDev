@@ -207,4 +207,38 @@ const linkedUrl = linkedInfo?.url
 			margin: 0 auto;
 		}
 	}
+
+	@media print {
+		.container {
+			gap: 0.5rem;
+		}
+
+		.info {
+			gap: 0.2rem;
+			padding-right: 8px;
+		}
+
+		h1 {
+			font-size: 1.4rem;
+		}
+
+		h2 {
+			font-size: 0.85rem;
+		}
+
+		img {
+			width: 64px;
+			height: 64px;
+			border-radius: 8px;
+		}
+
+		span {
+			font-size: 0.7rem;
+		}
+
+		footer.print {
+			font-size: 0.6rem;
+			margin-top: 2px;
+		}
+	}
 </style>

@@ -94,17 +94,17 @@ const SKILLS_ICONS: Record<string, any> = {
     @media print {
         ul {
             display: inline;
-            line-height: 1.6; /* Improve readability */
+            line-height: 1.4;
         }
         
         li {
             display: inline;
             background-color: transparent;
             padding: 0;
-            color: #333; /* Darker gray instead of pure black for subtle contrast */
+            color: #333;
             font-weight: 500;
             border-radius: 0;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
         li::after {
@@ -116,7 +116,6 @@ const SKILLS_ICONS: Record<string, any> = {
             content: ".";
         }
         
-        /* Ocultar iconos en impresión si se desea, o ajustarlos */
         li :global(svg) {
             display: none; 
         }

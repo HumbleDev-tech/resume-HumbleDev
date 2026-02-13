@@ -156,44 +156,45 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
 
   @media print {
     .certificates-container {
-      gap: 12px;
+      gap: 2px;
     }
     
     .issuer-group {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 2px;
     }
 
     .issuer-group h3 {
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: #000;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
+      padding-bottom: 1px;
     }
 
     ul {
       padding-left: 0;
-      margin-top: 2px;
+      margin-top: 1px;
+      gap: 1px;
     }
 
     li {
       list-style: none;
-      margin-bottom: 2px;
+      margin-bottom: 0;
     }
     
-    article {
-      align-items: center; /* Align items vertically */
-    }
-
     header {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
+      margin-bottom: 0;
     }
 
     article h4 {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       color: #000 !important;
+    }
+
+    time {
+      font-size: 0.7rem;
+      min-width: 40px;
     }
 
     .hours {
@@ -201,10 +202,11 @@ const certificatesByIssuer = certificates.reduce((acc, certificate) => {
       border: 1px solid #ddd;
       background: #fff;
       color: #000;
-      font-size: 0.65rem;
+      font-size: 0.55rem;
+      margin-top: 0;
+      padding: 0 0.25rem;
     }
 
-    /* Hide summary if desired to save space, or show it */
     footer p {
         display: none;
     }

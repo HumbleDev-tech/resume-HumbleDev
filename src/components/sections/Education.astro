@@ -155,15 +155,36 @@ const educationByInstitution = education.reduce((acc, edu) => {
 
   @media print {
     .education-container {
-      gap: 16px;
+      gap: 4px;
     }
     
     .institution-group {
-      break-inside: avoid;
+      gap: 2px;
+    }
+
+    .institution-group h3 {
+      font-size: 0.85rem;
+      margin-bottom: 1px;
+      padding-bottom: 1px;
+    }
+
+    ul {
+      gap: 2px;
+      padding-left: 0;
+    }
+
+    article h4 {
+      font-size: 0.8rem;
+    }
+
+    time {
+      font-size: 0.75rem;
     }
 
     .duration {
-      display: inline-block !important;
+      font-size: 0.6rem;
+      margin-top: 1px;
+      padding: 0.05rem 0.3rem;
       border: 1px solid #ddd;
       background: #fff;
       color: #000;
