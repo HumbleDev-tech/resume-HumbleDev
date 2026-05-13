@@ -1,0 +1,327 @@
+---
+import { basics, work, education, certificates, skills, languages, projects } from "@cv"
+
+const { name, label, email, phone, location, profiles, summary } = basics
+const { city, region } = location
+
+const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
+function formatDate(dateStr: string | null): string {
+  if (!dateStr) return "Actual"
+  const d = new Date(dateStr)
+  const m = String(d.getUTCMonth() + 1).padStart(2, '0')
+  return `${m}/${d.getUTCFullYear()}`
+}
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>CV ATS - {name}</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #000;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 48px;
+    }
+
+    h1 {
+      font-size: 18pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .contact-line {
+      font-size: 9.5pt;
+      color: #444;
+      margin-bottom: 2px;
+    }
+
+    .section-title {
+      font-size: 11.5pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 2px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .job {
+      margin-bottom: 14px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .job-title {
+      font-weight: bold;
+      font-size: 10.5pt;
+    }
+
+    .job-company {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .job-date {
+      font-size: 9.5pt;
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .job-location {
+      font-size: 9pt;
+      color: #555;
+      font-style: italic;
+    }
+
+    .job-summary {
+      margin-top: 4px;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    .edu-item {
+      margin-bottom: 8px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-degree {
+      font-weight: bold;
+      font-size: 10.5pt;
+    }
+
+    .edu-institution {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .edu-date {
+      font-size: 9.5pt;
+      color: #444;
+    }
+
+    .cert-item {
+      font-size: 10pt;
+      margin-bottom: 3px;
+    }
+
+    .skills-text {
+      font-size: 10pt;
+      line-height: 1.6;
+    }
+
+    .skill-category {
+      font-weight: bold;
+    }
+
+    .lang-item {
+      font-size: 10pt;
+      margin-bottom: 2px;
+    }
+
+    .project-item {
+      margin-bottom: 8px;
+    }
+
+    .project-name {
+      font-weight: bold;
+      font-size: 10.5pt;
+    }
+
+    .project-desc {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    .project-tech {
+      font-size: 9pt;
+      color: #555;
+    }
+
+    /* Download bar - hidden on print */
+    .download-bar {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      border-radius: 10px;
+    }
+
+    .download-bar p {
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .download-bar button {
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 10px 28px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .download-bar button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+    }
+
+    @media print {
+      .download-bar { display: none !important; }
+      body { padding: 0; margin: 0; }
+      .section-title { margin-top: 10px; }
+    }
+
+    @page {
+      margin: 1.5cm 1.8cm;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="download-bar">
+    <button onclick="window.print()">📄 Guardar como PDF</button>
+    <p>En el diálogo de impresión, selecciona "Guardar como PDF"</p>
+  </div>
+
+  <h1>{name}</h1>
+  <div class="subtitle">{label}</div>
+  <div class="contact-line">
+    {city}, Región de {region}, Chile &nbsp;|&nbsp; {phone} &nbsp;|&nbsp; {email}
+  </div>
+  <div class="contact-line">
+    {profiles.map((p, i) => (
+      <span>{p.network}: {p.url}{i < profiles.length - 1 ? " | " : ""}</span>
+    ))}
+  </div>
+
+  <!-- PERFIL -->
+  <div class="section-title">Perfil Profesional</div>
+  <p class="job-summary">{summary}</p>
+
+  <!-- EXPERIENCIA -->
+  <div class="section-title">Experiencia Laboral</div>
+  {work.map(({ name: company, position, startDate, endDate, summary: desc, highlights }) => (
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-title">{position}</span>
+          <span class="job-company"> — {company}</span>
+        </div>
+        <span class="job-date">{formatDate(startDate)} – {formatDate(endDate)}</span>
+      </div>
+      <p class="job-summary">{desc}</p>
+      {highlights.length > 0 && (
+        <p class="project-tech">Tecnologías: {highlights.join(", ")}</p>
+      )}
+    </div>
+  ))}
+
+  <!-- EDUCACIÓN -->
+  <div class="section-title">Formación Académica</div>
+  {education.map(({ institution, area, startDate, endDate, duration }) => (
+    <div class="edu-item">
+      <div class="edu-header">
+        <div>
+          <span class="edu-degree">{area}</span>
+          <span class="edu-institution"> — {institution}</span>
+        </div>
+        <span class="edu-date">{new Date(startDate).getUTCFullYear()} – {new Date(endDate).getUTCFullYear()}</span>
+      </div>
+      {duration && <span class="project-tech">{duration}</span>}
+    </div>
+  ))}
+
+  <!-- CERTIFICACIONES -->
+  {certificates.length > 0 && (
+    <div>
+      <div class="section-title">Certificaciones y Formación Complementaria</div>
+      {certificates.map(({ name: certName, issuer, date, hours }) => (
+        <div class="cert-item">
+          {certName} — {issuer} ({new Date(date).getUTCFullYear()})
+          {hours && <span style="color: #555;"> · {hours}</span>}
+        </div>
+      ))}
+    </div>
+  )}
+
+  <!-- SKILLS -->
+  <div class="section-title">Habilidades Técnicas</div>
+  <p class="skills-text">
+    {skills.map((s, i) => (
+      <span>{s.name}{i < skills.length - 1 ? ", " : "."}</span>
+    ))}
+  </p>
+
+  <!-- PROYECTOS -->
+  {projects.length > 0 && (
+    <div>
+      <div class="section-title">Proyectos Destacados</div>
+      {projects.map(({ name: projName, description, highlights: techs, url }) => (
+        <div class="project-item">
+          <span class="project-name">{projName}</span>
+          {projName && <span class="project-tech"> — {url}</span>}
+          <p class="project-desc">{description}</p>
+          {techs.length > 0 && (
+            <p class="project-tech">Tecnologías: {techs.join(", ")}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  )}
+
+  <!-- IDIOMAS -->
+  {languages.length > 0 && (
+    <div>
+      <div class="section-title">Idiomas</div>
+      {languages.map(({ language, fluency }) => (
+        <div class="lang-item">
+          <strong>{language}:</strong> {fluency}
+        </div>
+      ))}
+    </div>
+  )}
+
+  <script>
+    // Auto-open print dialog after a short delay to let the page render
+    if (window.location.hash === '#print') {
+      setTimeout(() => window.print(), 400);
+    }
+  </script>
+</body>
+</html>

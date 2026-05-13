@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.11.0",
-    "hotkeypad": "^1.0.2"
+    "hotkeypad": "^1.0.2",
+    "jspdf": "^4.2.1"
   }
 }
