@@ -13,9 +13,17 @@ import { work } from "@cv"
     {
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+          const startD = new Date(startDate)
+          const startMonth = String(startD.getUTCMonth() + 1).padStart(2, '0')
+          const startFormatted = `${startMonth}/${startD.getUTCFullYear()}`
+          const endFormatted =
+            endDate != null
+              ? (() => { 
+                  const d = new Date(endDate); 
+                  const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+                  return `${m}/${d.getUTCFullYear()}` 
+                })()
+              : "Actual"
 
           return (
             <li>
@@ -34,13 +42,13 @@ import { work } from "@cv"
                     <time 
                       datetime={startDate}
                       data-title={startDate}>
-                        {startYear}
+                        {startFormatted}
                     </time>
                     {" - "}
                     <time 
                       datetime={endDate}
                       data-title={endDate}>
-                        {endYear}
+                        {endFormatted}
                     </time>
                   </div>
                 </header>

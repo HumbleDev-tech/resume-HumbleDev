@@ -1,0 +1,122 @@
+DIEGO IGNACIO VALENZUELA CÁRDENAS
+Ingeniero en Informática | Soporte TIC & Desarrollo de Software
+Castro, Región de Los Lagos, Chile | +56 9 3684 9730 | diegovalenzuela985@gmail.com
+LinkedIn: https://www.linkedin.com/in/diego-valenzuela-5042ba310/
+GitHub: https://github.com/HumbleDev-tech
+
+================================================================================
+PERFIL PROFESIONAL
+================================================================================
+
+Ingeniero en Informática con experiencia en soporte TIC y desarrollo de software.
+Orientado a mantener la continuidad operativa de infraestructuras tecnológicas y
+construir soluciones a medida para organizaciones públicas y privadas. Manejo del
+ciclo completo de desarrollo web y móvil, junto con diagnóstico de fallas,
+administración de redes y atención al usuario en entornos de alta demanda.
+
+================================================================================
+HABILIDADES TÉCNICAS Y PALABRAS CLAVE
+================================================================================
+
+Soporte e Infraestructura: Help Desk, mantenimiento preventivo/correctivo,
+hardware/software, servidores, redes LAN/WAN, direccionamiento IP, gestión de
+incidentes, control de activos.
+
+Desarrollo de Software: JavaScript, TypeScript, Node.js, React, Next.js,
+React Native, SQL, Python.
+
+Herramientas y Nube: AWS Amplify, Vercel, Firebase, Git/GitHub.
+
+Herramientas de IA: GitHub Copilot, Cursor, Claude (Anthropic), ChatGPT,
+Antigravity (Google) — uso aplicado en generación de código, revisión de lógica,
+documentación técnica y resolución de problemas en desarrollo.
+
+Gestión y Metodologías: Scrum, QA, documentación técnica, compras públicas
+(Mercado Público), ofimática avanzada.
+
+================================================================================
+EXPERIENCIA LABORAL
+================================================================================
+
+TÉCNICO EN SOPORTE TIC
+Hospital Comunitario de Achao | Achao, Chiloé, Chile
+Febrero 2026 – Mayo 2026
+
+- Ejecuté mantenimiento preventivo y correctivo del equipamiento informático,
+  software institucional, impresoras y periféricos, asegurando la continuidad
+  operativa de las áreas clínicas y administrativas del hospital.
+- Configuré y administré la red de datos, direccionamiento IP y conectividad,
+  mejorando la estabilidad de la infraestructura tecnológica del establecimiento.
+- Brindé soporte técnico y resolución de incidencias a usuarios internos
+  (Help Desk), contribuyendo a reducir los tiempos de respuesta y mantener la
+  operatividad de los servicios de salud.
+- Implementé la documentación y el inventario de activos tecnológicos,
+  aumentando el control y la trazabilidad del equipamiento.
+- Asesoré técnicamente en la adquisición de tecnología mediante plataformas de
+  compras públicas (Mercado Público).
+
+DESARROLLADOR FULL STACK (PRÁCTICA PROFESIONAL)
+Cuerpo de Bomberos de Osorno | Osorno, Chile
+Enero 2025 – Abril 2025
+
+- Desarrollé un sistema de gestión web y móvil para 8 compañías, utilizando
+  Next.js, React Native y AWS Amplify.
+- Ejecuté el ciclo de vida completo del producto: levantamiento de
+  requerimientos, QA, despliegue continuo en Vercel y soporte.
+- Lideré la digitalización de procesos operativos clave, reduciendo
+  significativamente el uso de papel y agilizando la administración.
+
+================================================================================
+FORMACIÓN ACADÉMICA
+================================================================================
+
+INGENIERÍA EN INFORMÁTICA
+INACAP Osorno | 2021 – 2024 | 8 Semestres
+Cursos destacados: Desarrollo de Software, Arquitectura de Sistemas,
+Gestión de Proyectos.
+
+TÉCNICO ANALISTA PROGRAMADOR
+INACAP Osorno | 2021 – 2024 | 4 Semestres
+Cursos destacados: Lógica de Programación, Bases de Datos, Desarrollo Web.
+
+================================================================================
+CERTIFICACIONES Y FORMACIÓN COMPLEMENTARIA
+================================================================================
+
+- Diplomado Desarrollo Full Stack — INACAP (162 horas académicas) — 2024
+- Arquitectura Cloud — INACAP (198 horas académicas) — 2024
+- Diseño Ágil de Sistemas — INACAP (126 horas académicas) — 2024
+- Soporte Computacional — INACAP (126 horas académicas) — 2024
+- Gestión de Bases de Datos — INACAP (126 horas académicas) — 2024
+
+================================================================================
+PROYECTOS DESTACADOS
+================================================================================
+
+CV PORTFOLIO - ASTRO THEME (Activo)
+Portafolio minimalista, accesible y optimizado para SEO desarrollado con Astro,
+React y Tailwind CSS. Incluye modo oscuro, soporte para impresión PDF y
+generación dinámica de metadatos.
+Tecnologías: Astro, React, Tailwind CSS, TypeScript
+https://github.com/HumbleDev-tech/resume-HumbleDev
+
+SUMA POS (Activo)
+Sistema de Punto de Venta SaaS con gestión de inventario, reportes financieros,
+sistema de tiers, equipo multiusuario y soporte para múltiples negocios.
+Tecnologías: React, TypeScript, Firebase, Vite
+https://github.com/HumbleDev-tech
+
+================================================================================
+HABILIDADES BLANDAS
+================================================================================
+
+Responsabilidad, trabajo en equipo, comunicación efectiva, orientación al
+usuario y al servicio público, resolución de problemas, adaptabilidad,
+aprendizaje continuo, autonomía.
+
+================================================================================
+IDIOMAS
+================================================================================
+
+Español: Nativo
+Inglés: Intermedio (lectura de documentación técnica y manuales)
