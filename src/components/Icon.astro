@@ -28,6 +28,7 @@ import Firebase from "@/icons/Firebase.astro"
 import AI from "@/icons/AI.astro"
 import Hardware from "@/icons/Hardware.astro"
 import Support from "@/icons/Support.astro"
+import WorldMap from "@/icons/WorldMap.astro"
 
 interface Props {
   name: string
@@ -74,6 +75,8 @@ const ICONS: Record<string, any> = {
   "Gemini API": AI,
   "Soporte TI": Support,
   "Hardware Maintenance": Hardware,
+  "Mantenimiento Hardware": Hardware,
+  "Mercado Público": WorldMap,
 }
 
 const IconComponent = ICONS[name]
